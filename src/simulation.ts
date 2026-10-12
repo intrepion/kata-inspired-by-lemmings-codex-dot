@@ -67,7 +67,7 @@ export class Simulation {
    if(c.state==='builder'){
     if(c.clock<8)continue;c.clock=0;
     const nx=c.x+2*c.dir,ny=c.y-1;
-    if(nx<0||nx>=WIDTH||ny<3||this.cell(nx,ny-1)||this.cell(nx,ny-2)||this.cell(c.x+c.dir,ny-1)){c.state='walk';c.dir=c.dir===1?-1:1;continue;}
+    if(nx<0||nx>=WIDTH||ny<3||this.cell(nx,ny-1)||this.cell(nx,ny-2)||this.cell(c.x+c.dir,ny-1)||this.cell(c.x+c.dir,ny-2)){c.state='walk';c.dir=c.dir===1?-1:1;continue;}
     for(const x of [c.x+c.dir,nx])if(!this.cell(x,ny))this.paint({x,y:ny,w:1,h:1},1);
     c.x=nx;c.y=ny;c.steps++;if(c.steps>=12)c.state='walk';continue;
    }
@@ -82,7 +82,7 @@ export class Simulation {
    const nx=c.x+c.dir;
    if(this.active.some(b=>b.id!==c.id&&b.state==='blocker'&&Math.abs(b.y-c.y)<=1&&Math.abs(b.x-nx)<=1)){c.dir=c.dir===1?-1:1;continue;}
    if(this.cell(nx,c.y-1)){
-    if(!this.cell(nx,c.y-2)&&!this.cell(nx,c.y-3)){c.x=nx;c.y--;}
+    if(this.cell(nx,c.y-1)===1&&!this.cell(nx,c.y-2)&&!this.cell(nx,c.y-3)){c.x=nx;c.y--;}
     else c.dir=c.dir===1?-1:1;
    }else c.x=nx;
   }

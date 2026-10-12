@@ -59,3 +59,10 @@ test('paused skill assignment never advances time and retry reconstructs terrain
  const s=spawn();s.assign(1,'digger');assert.equal(s.tick,1);s.step(8);assert.equal(s.cell(10,40),0);const retry=new Simulation(s.garden);assert.equal(retry.cell(10,40),1);assert.equal(retry.tick,0);assert.equal(retry.charges.digger,2);
 });
 test('trapped blockers eventually fail instead of running forever',()=>{const s=spawn();s.assign(1,'blocker');s.step(6000);assert.equal(s.status,'failed');});
+test('one-cell rootstone turns walkers while one-cell moss is climbable',()=>{
+ const steel=spawn(fixture({steel:[{x:11,y:39,w:1,h:1}]}));steel.step(5);assert.equal(steel.creatures[0].x,10);assert.equal(steel.creatures[0].dir,-1);
+ const moss=spawn(fixture({earth:[{x:0,y:40,w:120,h:20},{x:11,y:39,w:1,h:1}]}));moss.step(5);assert.equal(moss.creatures[0].x,11);assert.equal(moss.creatures[0].y,39);
+});
+test('builders stop before a low ceiling above the intermediate stair',()=>{
+ const s=spawn(fixture({steel:[{x:11,y:37,w:1,h:1}]}));s.assign(1,'builder');s.step(8);assert.equal(s.creatures[0].steps,0);assert.equal(s.cell(11,39),0);
+});
