@@ -1,0 +1,2 @@
+# Inspection pauses and assignments are explicit
+Clicking a glowling or its roster entry pauses the run, then the player selects a skill and presses Apply. Paused assignment, freely releasing a blocker, generous spawn spacing and no countdown are deliberate departures from the reference game: the puzzle tests planning rather than reflexes. A run fails as soon as the quota is impossible, or after 6000 ticks to resolve trapped crews. Hazards take priority over shelters.

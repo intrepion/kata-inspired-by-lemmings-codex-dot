@@ -1,0 +1,8 @@
+# Autonomous Grill with Docs decisions
+The user authorized recommended defaults without design interviews. Adapted the local grill-with-docs → grilling/domain-modeling and implement → tdd/code-review workflows.
+
+Design tree resolved: original garden identity → glowling lantern crew → six short handcrafted gardens → tutorial-first progression → five charged skills plus free release → deterministic grid → safe paused inspection → local validated campaign save → private repository + local production server. No audio, accounts, multiplayer, public hosting or external assets.
+
+Authorized seams: Simulation (run, tick, assign, snapshot) and progress decoding. Tests use fixtures and visible actions, not internal mocks. Targeted red/green cycles capture quota, assignment and collision rules; campaign solution replays supplement actual Chrome QA. Review comparison: initial documentation commit to implementation HEAD; originating spec: docs/SPEC.md. Independent reviewers assess standards and specification separately.
+
+Reference: https://arxiv.org/abs/1202.6581 establishes the autonomous-creature/limited-skill rescue premise. Historical descriptions were checked at https://lemmingsdiary.tumblr.com/L1Glossary and https://www.deveria.com/alexis/lemmings/lemmings/hints.html . These inform broad mechanics only. Our names, artwork and layouts are original. Deliberate deviations: finite 12-step bridges; free blocker release; grounded-only earthwork; safe-fall equipment may be assigned in flight; steel-aware grid excavation; inspection pauses; immediate exact-quota success; fixed release cadence; no lethal cancellation skill.

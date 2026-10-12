@@ -1,0 +1,2 @@
+# A discrete deterministic garden
+Use a fixed 20 Hz simulation and an integer terrain grid rather than continuous physics. Skill changes and collision order must replay identically at every presentation speed. This sacrifices pixel-perfect historical mechanics for visible, testable boundaries; ramps rise one cell per two horizontal cells and fatal falls exceed 14 cells. Renderer frames never affect decisions.
