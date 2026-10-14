@@ -1,12 +1,21 @@
 # QA evidence
 
-## Automated simulation
+## 2026-10-14 live-targeting correction
+
+31 Node tests pass after adding six input-boundary regressions. The old inspection behavior was extracted unchanged and the new running-state test failed with `true !== false`; removing automatic pause made it pass. Immediate canvas assignment and explicit paused stepping each had their own failing tracer before implementation. Strict typecheck and production build pass. The six new tests use real Simulation and RescueControls interfaces, without browser mocks: a running inspection advances ticks and position; a live Builder click spends one charge and creates its first stair eight ticks later; Step preserves paused play; a click at an old position spends no charge; repeated invalid clicks on an overlapping blocker do not assign another traveler; stale-run and inactive-target input cannot assign. Existing six-garden solutions still pass.
+
+Current behavior: choose a skill and click a traveler under the pointer to assign immediately while running. Numbered crew cards inspect without pausing or assigning; Apply/Enter remains the deliberate accessible assignment action. Pause/Step are explicit. Help/reset dialogs and document hiding retain their interruption pauses. Current-position bounded hit testing replaces broad-radius repeated-click cycling. A miss or invalid action never spends a charge or falls through to another traveler.
+
+Fresh coordinated Chrome extension browser check at http://localhost:5205/ used a separate origin from the usual 127.0.0.1 preview, without clearing progress. Through visible Step controls, staged Garden 1 at 10.5s, traveler #1 at column 47; selected Basher, half speed, resumed, then clicked its rendered body. Observed WALKING retained, Basher 1→0, traveler #1 in basher state, and success feedback “Crew keeps walking.” Time advanced to 12.5s and traveler #1 reached column 51 while excavating the wall. Clicking crew card #2 inspected it while time and all walkers continued. Explicit Pause then stopped the run at 17.7s, and the completed tunnel was visible. New served production JS index-4zo4pleM.js and CSS index-ClnzGZp8.css were fetched and matched the build byte for byte. This is focused desktop interaction evidence; the six-garden replay and edge cases above are simulation tests. The Chrome campaign evidence below is historical and describes the prior paused-inspection controls.
+
+
+## Historical automated simulation
 
 25 Node tests pass. Six scripted solutions use the same public Simulation.assign and step interfaces as the visible controls. These are deterministic simulation replays, not browser gameplay. Completion ticks: garden1 799, garden2 811, garden3 868, garden4 866, garden5 841, garden6 883. Additional assertions cover accounting, timing, impossible quota, exact quota, paused assignment, stale run input, retry, clipped terrain, blockers/free release, fall thresholds/umbrella, bramble priority, builders, soft excavation/rootstone and speed batches. Corrupt save decoding and sequential unlock integrity have separate tests.
 
 Targeted red/green evidence: initial spawn/accounting tracer failed before Simulation existed; save-corruption tracer failed before decoder existed; both independent-review collision regressions failed against the old behavior then passed with their fixes. Node test output is reproducible with npm test.
 
-## Actual supported local Chrome
+## Historical supported local Chrome (prior controls)
 
 Loaded the production build at http://127.0.0.1:5205 with the user's Chrome extension. Completed all six gardens through ordinary visible Step, crew selection, toolkit and Apply controls. No debug completion controls or page-state injection were used.
 
