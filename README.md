@@ -40,3 +40,7 @@ npm audit --audit-level=moderate
 ```
 
 31 observable input/domain/save tests include six actual campaign solution replays. Live input tests cover uninterrupted inspection and direct assignment, explicit stepping, moving targets, overlap, invalid charges, stale runs and inactive travelers. See [specification](docs/SPEC.md), [glossary](GLOSSARY.md), [decisions](docs/decisions.md), [QA evidence](docs/QA.md), and [independent reviews](docs/REVIEWS.md). Browser gameplay and simulation replay are separately reported. No audio or external runtime assets; only TypeScript and Vite development tools.
+
+## Play online
+
+[Play the hosted game](https://intrepion.github.io/kata-inspired-by-lemmings-codex-dot/)
