@@ -1,6 +1,47 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "gameId": "kata-inspired-by-lemmings-codex-dot",
   "playUrl": "https://intrepion.github.io/kata-inspired-by-lemmings-codex-dot/",
-  "screenshots": []
+  "screenshots": [
+    {
+      "path": "arcade/screenshots/ci-20261102-01.jpg",
+      "sha256": "2d63879d94800a9dc43d4940f8db2587494dcfa6714bf760f5858acd14d072b1",
+      "alt": "Mosslight Rescue gameplay, view 1",
+      "provenance": {
+        "kind": "ci_gameplay_capture",
+        "sourcePath": "arcade/capture-evidence/ci-20261102-01.png",
+        "sourceSha256": "7e507bbc86830c0b46e89438b525087b07f2e93c383509c33e16d010c93b104e",
+        "captureCommit": "d5a817b64d4cb37dec4b6599b41a7ecbb310c032",
+        "workflowRunId": "41413781497",
+        "inputHashes": {
+          "index.html": "08d5555a55e7ff23adcde32cd065d901cd2c03e85efa083d4d1465b953455c76",
+          "assets/index-4zo4pleM.js": "cf8dfef6b2ed5825edc6b7110c6e0eedc6c3f07b153e54e36643301e9d15e99d",
+          "assets/index-ClnzGZp8.css": "0edeb57ed4a76070f9909f3ffada8de5fe314afd184afa28740237bd2533a829"
+        },
+        "publishedFilesVerifiedAt": "2026-11-02T19:01:20Z",
+        "captureRecordPath": "arcade/capture-evidence/ci-20261102-record.json",
+        "captureRecordSha256": "ca2e80d9afc94b9610914ca429798b6f12fbd23bc7064f1305f3eac6df01f74b"
+      }
+    },
+    {
+      "path": "arcade/screenshots/ci-20261102-02.jpg",
+      "sha256": "1ccb02b933f72e5756dd79591308324dbda50a536c87eab0f83a6bb0128220ca",
+      "alt": "Mosslight Rescue gameplay, view 2",
+      "provenance": {
+        "kind": "ci_gameplay_capture",
+        "sourcePath": "arcade/capture-evidence/ci-20261102-02.png",
+        "sourceSha256": "1d523de6e9df2472c36d8c0620f53ebcf0002e971b8e4bfb7b6a221f6680870d",
+        "captureCommit": "d5a817b64d4cb37dec4b6599b41a7ecbb310c032",
+        "workflowRunId": "41413781497",
+        "inputHashes": {
+          "index.html": "08d5555a55e7ff23adcde32cd065d901cd2c03e85efa083d4d1465b953455c76",
+          "assets/index-4zo4pleM.js": "cf8dfef6b2ed5825edc6b7110c6e0eedc6c3f07b153e54e36643301e9d15e99d",
+          "assets/index-ClnzGZp8.css": "0edeb57ed4a76070f9909f3ffada8de5fe314afd184afa28740237bd2533a829"
+        },
+        "publishedFilesVerifiedAt": "2026-11-02T19:01:20Z",
+        "captureRecordPath": "arcade/capture-evidence/ci-20261102-record.json",
+        "captureRecordSha256": "ca2e80d9afc94b9610914ca429798b6f12fbd23bc7064f1305f3eac6df01f74b"
+      }
+    }
+  ]
 }

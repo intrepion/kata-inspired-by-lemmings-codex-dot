@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "workflowCommit": "e71064d49c769245e9ecf603a90763a7f3fa69e3",
+  "sourceCommit": "d5a817b64d4cb37dec4b6599b41a7ecbb310c032",
+  "runId": "41413781497",
+  "url": "http://127.0.0.1:4240/",
+  "inputs": {
+    "index.html": "08d5555a55e7ff23adcde32cd065d901cd2c03e85efa083d4d1465b953455c76",
+    "assets/index-4zo4pleM.js": "cf8dfef6b2ed5825edc6b7110c6e0eedc6c3f07b153e54e36643301e9d15e99d",
+    "assets/index-ClnzGZp8.css": "0edeb57ed4a76070f9909f3ffada8de5fe314afd184afa28740237bd2533a829"
+  },
+  "browser": "153.0.8010.12",
+  "viewport": {
+    "width": 1280,
+    "height": 1000
+  },
+  "screenshots": [
+    "mosslight-01.png",
+    "mosslight-02.png"
+  ]
+}
