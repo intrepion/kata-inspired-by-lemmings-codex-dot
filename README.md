@@ -44,3 +44,7 @@ npm audit --audit-level=moderate
 ## Play online
 
 [Play the hosted game](https://intrepion.github.io/kata-inspired-by-lemmings-codex-dot/)
+
+## Arcade metadata
+
+See [docs/arcade-metadata.md](docs/arcade-metadata.md) for the game-owned manifest and screenshot provenance.
