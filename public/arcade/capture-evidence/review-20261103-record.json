@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "workflowCommit": "b0ff8953cb02b2ec4220fd518bf222a4bafe86d4",
+  "sourceCommit": "b0ff8953cb02b2ec4220fd518bf222a4bafe86d4",
+  "runId": "41676509556",
+  "url": "http://127.0.0.1:4280/",
+  "inputs": {
+    "index.html": "ed8a880d63c1de383234eb97bbc5aa5418179e8e7d4c56dd8b51124b8ee336d0",
+    "assets/index-ClnzGZp8.css": "0edeb57ed4a76070f9909f3ffada8de5fe314afd184afa28740237bd2533a829",
+    "assets/index-DkKsMWVQ.js": "5778e93e0a072fa529365765f326491639ec1c16ce471b9387688cc1dd3a0623"
+  },
+  "browser": "153.0.8010.12",
+  "viewport": {
+    "width": 1280,
+    "height": 1000
+  },
+  "screenshots": [
+    "miner-01.png",
+    "miner-02.png"
+  ]
+}

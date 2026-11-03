@@ -4,43 +4,43 @@
   "playUrl": "https://intrepion.github.io/kata-inspired-by-lemmings-codex-dot/",
   "screenshots": [
     {
-      "path": "arcade/screenshots/ci-20261102-01.jpg",
-      "sha256": "2d63879d94800a9dc43d4940f8db2587494dcfa6714bf760f5858acd14d072b1",
-      "alt": "Mosslight Rescue gameplay, view 1",
+      "path": "arcade/screenshots/review-20261103-01.jpg",
+      "sha256": "29b094a056072992bb240cd6d41ed03ebdff41cc205d635bcba0869910f1e2ff",
+      "alt": "Mosslight Rescue gameplay after the mechanics update, view 1",
       "provenance": {
         "kind": "ci_gameplay_capture",
-        "sourcePath": "arcade/capture-evidence/ci-20261102-01.png",
-        "sourceSha256": "7e507bbc86830c0b46e89438b525087b07f2e93c383509c33e16d010c93b104e",
-        "captureCommit": "d5a817b64d4cb37dec4b6599b41a7ecbb310c032",
-        "workflowRunId": "41413781497",
+        "sourcePath": "arcade/capture-evidence/review-20261103-01.png",
+        "sourceSha256": "905d70c56b6d6070f01c286419b2e6546f42a902a300030cf58e9a2dfc016036",
+        "captureCommit": "b0ff8953cb02b2ec4220fd518bf222a4bafe86d4",
+        "workflowRunId": "41676509556",
         "inputHashes": {
-          "index.html": "08d5555a55e7ff23adcde32cd065d901cd2c03e85efa083d4d1465b953455c76",
-          "assets/index-4zo4pleM.js": "cf8dfef6b2ed5825edc6b7110c6e0eedc6c3f07b153e54e36643301e9d15e99d",
-          "assets/index-ClnzGZp8.css": "0edeb57ed4a76070f9909f3ffada8de5fe314afd184afa28740237bd2533a829"
+          "index.html": "ed8a880d63c1de383234eb97bbc5aa5418179e8e7d4c56dd8b51124b8ee336d0",
+          "assets/index-ClnzGZp8.css": "0edeb57ed4a76070f9909f3ffada8de5fe314afd184afa28740237bd2533a829",
+          "assets/index-DkKsMWVQ.js": "5778e93e0a072fa529365765f326491639ec1c16ce471b9387688cc1dd3a0623"
         },
-        "publishedFilesVerifiedAt": "2026-11-02T19:01:20Z",
-        "captureRecordPath": "arcade/capture-evidence/ci-20261102-record.json",
-        "captureRecordSha256": "ca2e80d9afc94b9610914ca429798b6f12fbd23bc7064f1305f3eac6df01f74b"
+        "publishedFilesVerifiedAt": "2026-11-03T16:43:52Z",
+        "captureRecordPath": "arcade/capture-evidence/review-20261103-record.json",
+        "captureRecordSha256": "0b447c992c9ef390789aada230c9d1625f92263ca185632b9a34f52b116f9036"
       }
     },
     {
-      "path": "arcade/screenshots/ci-20261102-02.jpg",
-      "sha256": "1ccb02b933f72e5756dd79591308324dbda50a536c87eab0f83a6bb0128220ca",
-      "alt": "Mosslight Rescue gameplay, view 2",
+      "path": "arcade/screenshots/review-20261103-02.jpg",
+      "sha256": "3964649b317f78f6868ae818eb0dad06f0e3888268f58382b624423cab3cb614",
+      "alt": "Mosslight Rescue gameplay after the mechanics update, view 2",
       "provenance": {
         "kind": "ci_gameplay_capture",
-        "sourcePath": "arcade/capture-evidence/ci-20261102-02.png",
-        "sourceSha256": "1d523de6e9df2472c36d8c0620f53ebcf0002e971b8e4bfb7b6a221f6680870d",
-        "captureCommit": "d5a817b64d4cb37dec4b6599b41a7ecbb310c032",
-        "workflowRunId": "41413781497",
+        "sourcePath": "arcade/capture-evidence/review-20261103-02.png",
+        "sourceSha256": "d3dbc0d8c561ebaca1b25b9681f6dd193b1d43d0f3dcb6837ca9bf8c23cb45e8",
+        "captureCommit": "b0ff8953cb02b2ec4220fd518bf222a4bafe86d4",
+        "workflowRunId": "41676509556",
         "inputHashes": {
-          "index.html": "08d5555a55e7ff23adcde32cd065d901cd2c03e85efa083d4d1465b953455c76",
-          "assets/index-4zo4pleM.js": "cf8dfef6b2ed5825edc6b7110c6e0eedc6c3f07b153e54e36643301e9d15e99d",
-          "assets/index-ClnzGZp8.css": "0edeb57ed4a76070f9909f3ffada8de5fe314afd184afa28740237bd2533a829"
+          "index.html": "ed8a880d63c1de383234eb97bbc5aa5418179e8e7d4c56dd8b51124b8ee336d0",
+          "assets/index-ClnzGZp8.css": "0edeb57ed4a76070f9909f3ffada8de5fe314afd184afa28740237bd2533a829",
+          "assets/index-DkKsMWVQ.js": "5778e93e0a072fa529365765f326491639ec1c16ce471b9387688cc1dd3a0623"
         },
-        "publishedFilesVerifiedAt": "2026-11-02T19:01:20Z",
-        "captureRecordPath": "arcade/capture-evidence/ci-20261102-record.json",
-        "captureRecordSha256": "ca2e80d9afc94b9610914ca429798b6f12fbd23bc7064f1305f3eac6df01f74b"
+        "publishedFilesVerifiedAt": "2026-11-03T16:43:52Z",
+        "captureRecordPath": "arcade/capture-evidence/review-20261103-record.json",
+        "captureRecordSha256": "0b447c992c9ef390789aada230c9d1625f92263ca185632b9a34f52b116f9036"
       }
     }
   ]
