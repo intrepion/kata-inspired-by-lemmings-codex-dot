@@ -20,3 +20,12 @@ for(let i=0;i<gardens.length;i++)test(`visible solution rescues quota in ${garde
  assert.equal(s.status,'won',JSON.stringify({actions,creatures:s.creatures}));assert.ok(s.rescued>=s.garden.quota);
  console.log(`Garden ${i+1}: ${s.rescued}/${s.garden.quota}, ${s.tick} ticks; ${actions.join('; ')}`);
 });
+test('Roots & rain also supports a diagonal miner route without a digger',()=>{
+ const s=new Simulation(gardens[3]);let mined=false;
+ for(let t=0;t<6000&&s.status==='playing';t++){
+  for(const c of s.active)if(!mined&&c.x===38&&c.y===25)mined=s.assign(c.id,'miner');
+  s.step();
+ }
+ assert.equal(mined,true);assert.equal(s.status,'won');assert.equal(s.rescued,6);
+ assert.equal(s.charges.digger,1);assert.equal(s.charges.miner,0);
+});

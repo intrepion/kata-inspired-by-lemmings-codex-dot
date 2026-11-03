@@ -1,6 +1,6 @@
 import type { Garden, Rect, Skill } from './levels.ts';
 export const WIDTH=120, HEIGHT=60;
-export type State = 'walk'|'fall'|'builder'|'basher'|'digger'|'blocker'|'rescued'|'lost';
+export type State = 'walk'|'fall'|'builder'|'basher'|'digger'|'blocker'|'miner'|'rescued'|'lost';
 export type Creature = {id:number;x:number;y:number;dir:1|-1;state:State;umbrella:boolean;fall:number;clock:number;steps:number};
 let nextRun = 0;
 export class Simulation {
@@ -31,7 +31,7 @@ export class Simulation {
   if(skill==='umbrella')return !c.umbrella;
   if(c.state!=='walk'||!this.cell(c.x,c.y))return false;
   if(skill==='basher')return this.cell(c.x+c.dir,c.y-1)===1;
-  if(skill==='digger')return this.cell(c.x,c.y)===1;
+  if(skill==='digger'||skill==='miner')return this.cell(c.x,c.y)===1;
   return true;
  }
  assign(id:number,skill:Skill,run=this.run):boolean {
@@ -55,6 +55,17 @@ export class Simulation {
     if([c.x-1,c.x,c.x+1].some(x=>this.cell(x,c.y)===2)){c.state='walk';continue;}
     if(!this.cell(c.x,c.y)){c.state='fall';continue;}
     this.clear({x:c.x-1,y:c.y,w:3,h:1});c.y++;continue;
+   }
+   if(c.state==='miner'){
+    if(c.clock<8)continue;c.clock=0;
+    if(!this.cell(c.x,c.y)){c.state='fall';c.fall=0;continue;}
+    // Sweep a body-height diagonal tunnel, including the supporting floor.
+    const nx=c.x+c.dir,ny=c.y+1;
+    const cut={x:Math.min(c.x,nx)-1,y:c.y-3,w:4,h:4};
+    let steel=false;
+    for(let y=cut.y;y<cut.y+cut.h;y++)for(let x=cut.x;x<cut.x+cut.w;x++)if(this.cell(x,y)===2)steel=true;
+    if(steel){c.state='walk';continue;}
+    this.clear(cut);c.x=nx;c.y=ny;continue;
    }
    if(!this.cell(c.x,c.y)){
     if(c.state!=='fall'){c.state='fall';c.fall=0;}

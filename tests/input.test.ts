@@ -8,7 +8,7 @@ const fixture = (change: Partial<Garden> = {}): Garden => ({
  ...gardens[0], crew: 1, quota: 1, spawn: { x: 10, y: 40, dir: 1 },
  earth: [{ x: 0, y: 40, w: 120, h: 20 }], steel: [], hazards: [],
  exit: { x: 115, y: 36, w: 4, h: 5 },
- charges: { blocker: 2, builder: 2, basher: 2, digger: 2, umbrella: 2 }, ...change
+ charges: { blocker: 2, builder: 2, basher: 2, digger: 2, umbrella: 2, miner: 2 }, ...change
 });
 const run = (garden = fixture()) => {
  const sim = new Simulation(garden);

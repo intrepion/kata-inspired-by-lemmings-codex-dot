@@ -32,7 +32,7 @@ export function draw(ctx:CanvasRenderingContext2D,s:Simulation,selected:number|n
   if(c.umbrella){ctx.strokeStyle='#cec4f5';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(x,y-14);ctx.lineTo(x,y-31);ctx.stroke();ctx.fillStyle='#c4b4ec';ctx.beginPath();ctx.arc(x,y-31,11,Math.PI,Math.PI*2);ctx.fill();}
   if(c.state==='blocker'){ctx.strokeStyle='#eda2ad';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(x-12,y-10);ctx.lineTo(x+12,y-10);ctx.stroke();}
   if(c.state==='builder'){ctx.fillStyle='#e9bf75';ctx.fillRect(x+c.dir*9-3,y-12,6,3);}
-  if(c.state==='basher'||c.state==='digger'){ctx.strokeStyle='#d8e4c5';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(x+4,y-14);ctx.lineTo(x+12,y-5);ctx.stroke();}
+  if(c.state==='basher'||c.state==='digger'||c.state==='miner'){ctx.strokeStyle='#d8e4c5';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(x+4,y-14);ctx.lineTo(x+12,y-5);ctx.stroke();}
   ctx.fillStyle=selectedCreature?'#fff2bd':'#c8d6be';ctx.font='9px monospace';ctx.fillText(String(c.id),x,y+13);
  }
  if(s.tick===0){ctx.font='14px sans-serif';ctx.fillStyle='#d5e2cd';ctx.textAlign='left';ctx.fillText('A little crew. A bright way home.',28,42);}

@@ -9,7 +9,7 @@ test('a fresh paused run spawns only when stepped and preserves crew accounting'
  assert.equal(s.rescued+s.lost+s.active.length+s.remaining,5);
 });
 import type {Garden} from '../src/levels.ts';
-const fixture=(change:Partial<Garden>={}):Garden=>({...gardens[0],crew:1,quota:1,spawn:{x:10,y:40,dir:1},earth:[{x:0,y:40,w:120,h:20}],steel:[],hazards:[],exit:{x:115,y:36,w:4,h:5},charges:{blocker:2,builder:2,basher:2,digger:2,umbrella:2},...change});
+const fixture=(change:Partial<Garden>={}):Garden=>({...gardens[0],crew:1,quota:1,spawn:{x:10,y:40,dir:1},earth:[{x:0,y:40,w:120,h:20}],steel:[],hazards:[],exit:{x:115,y:36,w:4,h:5},charges:{blocker:2,builder:2,basher:2,digger:2,umbrella:2,miner:2},...change});
 function spawn(g=fixture()){const s=new Simulation(g);s.step();return s;}
 test('invalid assignments preserve charges and stale run input is rejected',()=>{
  const s=spawn();assert.equal(s.assign(1,'basher'),false);assert.equal(s.charges.basher,2);
@@ -65,4 +65,30 @@ test('one-cell rootstone turns walkers while one-cell moss is climbable',()=>{
 });
 test('builders stop before a low ceiling above the intermediate stair',()=>{
  const s=spawn(fixture({steel:[{x:11,y:37,w:1,h:1}]}));s.assign(1,'builder');s.step(8);assert.equal(s.creatures[0].steps,0);assert.equal(s.cell(11,39),0);
+});
+test('miners cut diagonal body-height tunnels in either facing direction',()=>{
+ for(const dir of [-1,1] as const){
+  const s=spawn(fixture({spawn:{x:50,y:40,dir}}));
+  assert.equal(s.assign(1,'miner'),true);assert.equal(s.charges.miner,1);
+  s.step(16);const c=s.creatures[0];assert.equal(c.x,50+2*dir);assert.equal(c.y,42);
+  assert.equal(s.cell(50+dir,40),0);assert.equal(s.cell(c.x,c.y-1),0);
+  assert.equal(s.cell(50-3*dir,40),1);assert.equal(s.cell(c.x,42),1);
+ }
+});
+test('miners stop before rootstone without partially excavating the stroke',()=>{
+ const s=spawn(fixture({steel:[{x:12,y:40,w:1,h:1}]}));s.assign(1,'miner');
+ const before=s.terrain.slice();s.step(8);
+ assert.equal(s.creatures[0].state,'walk');assert.equal(s.creatures[0].x,10);
+ assert.deepEqual(s.terrain,before);assert.equal(s.cell(12,40),2);
+});
+test('miners fall after breaking through a shelf and retain umbrella protection',()=>{
+ for(const umbrella of [false,true]){
+  const s=spawn(fixture({spawn:{x:10,y:10,dir:1},earth:[{x:0,y:10,w:40,h:2},{x:0,y:40,w:120,h:20}]}));
+  if(umbrella)s.assign(1,'umbrella');s.assign(1,'miner');s.step(150);
+  assert.equal(s.lost,umbrella?0:1);if(umbrella){assert.equal(s.creatures[0].y,40);assert.equal(s.creatures[0].state,'walk');}
+ }
+});
+test('miner assignments reject airborne and busy travelers without spending charges',()=>{
+ const s=spawn(fixture({spawn:{x:10,y:10,dir:1}}));assert.equal(s.assign(1,'miner'),false);assert.equal(s.charges.miner,2);
+ const busy=spawn();busy.assign(1,'blocker');assert.equal(busy.assign(1,'miner'),false);assert.equal(busy.charges.miner,2);
 });
