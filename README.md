@@ -1,5 +1,7 @@
 # Mosslight Rescue
 
+[Kata Arcade](https://intrepion.github.io/)
+
 An original, quiet rescue puzzle about a little lantern crew finding its way through six handcrafted gardens. Inspired by the autonomous-walker and limited-skill genre; all names, art and layouts are original.
 
 ## Play locally
